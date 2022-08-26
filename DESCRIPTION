@@ -1,0 +1,19 @@
+Package: poolLeakReprex
+Title: Reproduce Leaked Pool Object Warning
+Version: 0.0.0.9000
+Authors@R: c(
+ person("Matthew", "Roberts", email = "matthew.roberts@communities.gov.uk", role =   c("aut", "cre"))
+         )
+Description: The warning "you have a leaked Pool object", from the pool package, should only occur when pool attempts to destroy a live object.
+License: None
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
+Imports: 
+    DBI,
+    pool,
+    rlang,
+    RSQLite
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
