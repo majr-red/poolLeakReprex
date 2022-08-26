@@ -7,7 +7,7 @@
 nsp()
 }
 \value{
-The parent env of the package namespace
+The parent env of the package namespace, not locked after loading
 }
 \description{
 Namespace Parent

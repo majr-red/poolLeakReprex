@@ -1,11 +1,7 @@
 #' Namespace Parent
-#' @return The parent env of the package namespace
+#' @return The parent env of the package namespace, not locked after loading
 nsp <- function(){
-  parent.env(
-    parent.env(
-      environment()
-    )
-  )
+  rlang::env_parent(n=2)
 }
 
 #' Setup the pool connection
@@ -29,6 +25,7 @@ getConn <- function(){
 #' Clean up the pool connection on unload
 destroyConn <- function(){
     e <- nsp()
+
     pool::poolClose(getConn())
     e$connection_cache$poolConn <- NULL
     e$connection_cache <- NULL
